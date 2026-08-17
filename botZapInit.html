@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maria, a Robô da Mayra - Teste</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div id="app">
+    <!-- SIDEBAR -->
+    <aside id="sidebar">
+      <header class="sidebar-header">
+        <img src="https://i.pravatar.cc/100?img=12" class="avatar me" />
+        <div class="sidebar-actions">
+          <i class="fa-solid fa-circle-notch"></i>
+          <i class="fa-solid fa-message"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+      </header>
+      <div class="search-bar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="contactSearch" placeholder="Pesquisar ou começar nova conversa" />
+        </div>
+        <button id="addContactBtn" title="Novo contato"><i class="fa-solid fa-plus"></i></button>
+      </div>
+      <div id="contactList" class="contact-list"></div>
+      <footer class="sidebar-footer">
+        <button id="openConfigBtn"><i class="fa-solid fa-gear"></i> Configurar Webhook do Bot</button>
+      </footer>
+    </aside>
+
+    <!-- CHAT MAIN -->
+    <main id="chat-main">
+      <header class="chat-header">
+        <div class="chat-header-info">
+          <img id="currentAvatar" class="avatar" src="https://i.pravatar.cc/100?img=32" />
+          <div>
+            <strong id="currentName">Teca, a eleitora de Teste</strong>
+            <span id="currentStatus">online</span>
+          </div>
+        </div>
+        <div class="chat-header-actions">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-ellipsis-vertical" id="clearChatBtn" title="Limpar conversa"></i>
+        </div>
+      </header>
+
+      <div id="messages" class="messages"></div>
+
+      <div id="typingIndicator" class="typing hidden">
+        <span></span><span></span><span></span>
+      </div>
+
+      <div class="templates">
+        <button data-msg="Olá">Olá</button>
+        <button data-msg="/menu">/menu</button>
+        <button data-msg="Quero testar fluxo">Testar fluxo</button>
+        <button data-msg="Obrigado!">Obrigado!</button>
+      </div>
+
+      <footer class="chat-footer">
+        <button class="icon-btn"><i class="fa-regular fa-face-smile"></i></button>
+        <button class="icon-btn"><i class="fa-solid fa-paperclip"></i></button>
+        <div class="input-wrapper">
+          <select id="msgType">
+            <option value="text">Texto</option>
+            <option value="image">Imagem</option>
+            <option value="audio">Áudio</option>
+            <option value="button">Botões</option>
+          </select>
+          <input id="messageInput" placeholder="Digite uma mensagem" autocomplete="off" />
+        </div>
+        <button id="sendBtn" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+      </footer>
+    </main>
+
+    <!-- CONFIG DRAWER -->
+    <div id="configDrawer" class="drawer">
+      <div class="drawer-header">
+        <h3><i class="fa-solid fa-robot"></i> Configuração do Bot</h3>
+        <button id="closeConfigBtn">&times;</button>
+      </div>
+      <div class="drawer-body">
+        <label>Webhook URL do seu bot local</label>
+        <input id="webhookUrl" value="/webhook" />
+
+        <label>Método</label>
+        <select id="webhookMethod">
+          <option value="POST">POST</option>
+          <option value="GET">GET</option>
+        </select>
+
+        <label>Formato do Payload</label>
+        <select id="payloadFormat">
+          <option value="custom">Custom { from, body, pushName }</option>
+          <option value="baileys">Baileys / whatsapp-web.js</option>
+          <option value="cloud">WhatsApp Cloud API</option>
+        </select>
+
+        <div class="switch-row">
+          <label>Auto-responder ativado</label>
+          <label class="switch">
+            <input type="checkbox" id="autoResponder" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <button id="testConnectionBtn" class="primary-btn">Testar Conexão</button>
+        <div id="connectionStatus"></div>
+
+        <h4>Como seu bot deve responder:</h4>
+        <p>pong</p>
+
+        <h4>Log de Requisições</h4>
+        <div id="requestLog" class="log-box"></div>
+        <div class="drawer-actions">
+          <button id="exportBtn">Exportar conversa JSON</button>
+          <button id="clearLogBtn">Limpar log</button>
+        </div>
+      </div>
+    </div>
+    <div id="overlay" class="overlay hidden"></div>
+  </div>
+  <script src="../frontend.js"></script>
+</body>
+</html>
