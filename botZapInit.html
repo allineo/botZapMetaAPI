@@ -2,9 +2,9 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Maria, a Robô da Mayra - Teste</title>
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -29,12 +29,14 @@
       <div id="contactList" class="contact-list"></div>
       <footer class="sidebar-footer">
         <button id="openConfigBtn"><i class="fa-solid fa-gear"></i> Configurar Webhook do Bot</button>
+        <button id="resetCacheBtn" style="margin-top:8px;background:#f5f6f6;width:100%;padding:10px;border:1px solid #e9edef;border-radius:8px;cursor:pointer">🗑️ Limpar cache</button>
       </footer>
     </aside>
 
     <!-- CHAT MAIN -->
     <main id="chat-main">
       <header class="chat-header">
+        <button id="backBtn" class="back-btn"><i class="fa-solid fa-arrow-left"></i></button>
         <div class="chat-header-info">
           <img id="currentAvatar" class="avatar" src="https://i.pravatar.cc/100?img=32" />
           <div>
@@ -49,10 +51,7 @@
       </header>
 
       <div id="messages" class="messages"></div>
-
-      <div id="typingIndicator" class="typing hidden">
-        <span></span><span></span><span></span>
-      </div>
+      <div id="typingIndicator" class="typing hidden"><span></span><span></span><span></span></div>
 
       <div class="templates">
         <button data-msg="Olá">Olá</button>
@@ -84,46 +83,32 @@
         <button id="closeConfigBtn">&times;</button>
       </div>
       <div class="drawer-body">
-        <label>Webhook URL do seu bot local</label>
+        <label>Webhook URL</label>
         <input id="webhookUrl" value="/webhook" />
-
         <label>Método</label>
-        <select id="webhookMethod">
-          <option value="POST">POST</option>
-          <option value="GET">GET</option>
-        </select>
-
+        <select id="webhookMethod"><option value="POST">POST</option><option value="GET">GET</option></select>
         <label>Formato do Payload</label>
         <select id="payloadFormat">
-          <option value="custom">Custom { from, body, pushName }</option>
-          <option value="baileys">Baileys / whatsapp-web.js</option>
-          <option value="cloud">WhatsApp Cloud API</option>
+          <option value="custom">Custom</option>
+          <option value="baileys">Baileys</option>
+          <option value="cloud">Cloud API</option>
         </select>
-
         <div class="switch-row">
-          <label>Auto-responder ativado</label>
-          <label class="switch">
-            <input type="checkbox" id="autoResponder" checked />
-            <span class="slider"></span>
-          </label>
+          <label>Auto-responder</label>
+          <label class="switch"><input type="checkbox" id="autoResponder" checked /><span class="slider"></span></label>
         </div>
-
         <button id="testConnectionBtn" class="primary-btn">Testar Conexão</button>
         <div id="connectionStatus"></div>
-
-        <h4>Como seu bot deve responder:</h4>
-        <p>pong</p>
-
-        <h4>Log de Requisições</h4>
+        <h4>Log</h4>
         <div id="requestLog" class="log-box"></div>
         <div class="drawer-actions">
-          <button id="exportBtn">Exportar conversa JSON</button>
+          <button id="exportBtn">Exportar JSON</button>
           <button id="clearLogBtn">Limpar log</button>
         </div>
       </div>
     </div>
     <div id="overlay" class="overlay hidden"></div>
   </div>
-  <script src="../frontend.js"></script>
+  <script src="/frontend.js"></script>
 </body>
 </html>
