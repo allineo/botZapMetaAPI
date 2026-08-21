@@ -17,7 +17,7 @@ function normalizeContact(c) {
 
 let contacts = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null") || [
   { id: "5521999990001", name: "Teca, a eleitora de Teste", avatar: "https://i.pravatar.cc/100?img=32", messages: [
-    { from: "them", body: "Oi! Eu sou a Teca, vamos testar o bot? Digite /menu 🤖", time: new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}), type: "text" }
+    { from: "them", body: "Oi! Eu sou a Teca, vamos testar o robô? ", time: new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}), type: "text" }
   ]},
   { id: "5521988880002", name: "Alline Oliveira", avatar: "https://i.pravatar.cc/100?img=15", messages: [] },
   { id: '5511999990003', name: 'Suporte da Mayra', avatar: 'https://i.pravatar.cc/100?img=8', messages: [], last: 'Como posso ajudar?', time: 'Seg' },
