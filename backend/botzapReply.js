@@ -1,5 +1,6 @@
+import { llm } from "./llmServer.js";
 
-function getBotReply(incomingText) {
+async function getBotReply(incomingText) {
   if (!incomingText) return '';
 
   const text = incomingText.toLowerCase().trim();
@@ -42,8 +43,12 @@ function getBotReply(incomingText) {
     return `Agora são ${agora} (horário de Brasília)`;
   }
 
+  const historico = []; // TODO: Implementar histórico de mensagens para contexto
+  const respostaLLM = await llm(historico, text);
+
   // Fallback
-  return `Você disse: "${incomingText}"`;
+  return `${respostaLLM}`;
 }
 
-module.exports = { getBotReply };
+export { getBotReply };
+
