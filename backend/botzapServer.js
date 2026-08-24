@@ -85,3 +85,5 @@ appExpress.listen(PORT, () => console.log(`Bot rodando na porta ${PORT}`));
 // curl.exe -X POST "https://graph.facebook.com/v20.0/1253187821212583/messages" -H "Authorization: Bearer SEU_TOKEN_AQUI" -H "Content-Type: application/json" -d "@./testes/teste2.json"
 
 // curl.exe -X GET "https://api.groq.com/openai/v1/models" -H "Authorization: Bearer $env:GROQ_API_KEY"
+
+// https://botzapmetaapi.onrender.com/
