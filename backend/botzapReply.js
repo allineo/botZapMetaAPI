@@ -37,9 +37,9 @@ async function getBotReply(incomingText) {
                   + `Pergunta: ${intencaoPergunta.q}`;
 
     let agenda = await getAgenda(intencaoPergunta.timeMin, intencaoPergunta.timeMax);
-    console.log('Agenda:', agenda);
+    console.log('Agenda:', JSON.stringify(agenda));
 
-    respostaLLM = `\n\nEventos encontrados:\n${agenda}`;
+    respostaLLM = `Eventos encontrados: \n\n${JSON.stringify(agenda)}` ;
   
   } else if (intencaoPergunta.intencao === "CONSULTAR_IARAA") {
     // consultar IARAA
@@ -49,7 +49,7 @@ async function getBotReply(incomingText) {
   } else {
    // respostaLLM = await llm(historico, text);
    // resposta da pergunta genérica
-    respostaLLM = `${intencaoPergunta.resposta}`;
+    respostaLLM = intencaoPergunta.resposta;
   }
 
   return `${respostaLLM}`;

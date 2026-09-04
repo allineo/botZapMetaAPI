@@ -20,7 +20,7 @@ export async function getAgenda(timeMin, timeMax) {
 
   const res = await fetch(url);
   const json = await res.json();
-  console.log('getAgenda - JSON:', json);
+  //  console.log('getAgenda - JSON:', json);
   if (json.error) throw new Error(json.error.message);
 
   // Formata para o LLM entender bem

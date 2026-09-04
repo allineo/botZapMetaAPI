@@ -3,6 +3,7 @@
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:#111b21;color:#111;overflow:hidden;height:100dvh;width:100vw}
 #app{display:flex;height:100dvh;width:100vw;overflow:hidden;background:#f0f2f5}
 
+
 /* SIDEBAR */
 #sidebar{width:30%;min-width:350px;max-width:480px;background:#fff;border-right:1px solid #e9edef;display:flex;flex-direction:column;z-index:2}
 .sidebar-header{background:#f0f2f5;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;height:59px}
@@ -25,6 +26,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Ar
 #openConfigBtn{background:#00a884;color:#fff;border-color:#00a884;font-weight:600}
 
 /* CHAT */
+.bubble p {
+  white-space: pre-wrap;
+}
 #chat-main{flex:1;display:flex;flex-direction:column;background:#efeae2;position:relative}
 .chat-header{background:#f0f2f5;height:59px;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;border-left:1px solid #e9edef;gap:8px}
 .chat-header-info{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
