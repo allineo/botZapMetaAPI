@@ -39,7 +39,7 @@ async function getBotReply(incomingText) {
     let agenda = await getAgenda(intencaoPergunta.timeMin, intencaoPergunta.timeMax);
     console.log('Agenda:', JSON.stringify(agenda));
 
-    respostaLLM = `Eventos encontrados: \n\n${JSON.stringify(agenda)}` ;
+    respostaLLM = `Eventos encontrados: \n\n${agenda}` ;
   
   } else if (intencaoPergunta.intencao === "CONSULTAR_IARAA") {
     // consultar IARAA
