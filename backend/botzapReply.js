@@ -22,6 +22,7 @@ async function getBotReply(incomingText) {
 
   let intencaoPergunta = await llmIntencao(historico, text);
   intencaoPergunta = JSON.parse(intencaoPergunta);
+  console.log('intencaoPergunta:', intencaoPergunta);
 
   let respostaLLM = 'Pesquisando pergunta sobre: ';
   if (intencaoPergunta.intencao === "BUSCAR_AGENDA") {

@@ -34,6 +34,7 @@ appExpress.post('/webhook', async (request, response) => {
   if (isTesteLocal) {
     console.log('LOCAL');
     const replyText = await getBotReply(request.body.body);
+    console.log('Reply:', replyText);
     return response.json({ reply: replyText, ok: true });
   }
 
