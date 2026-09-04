@@ -12,7 +12,7 @@ const llmModel = "groq/compound-mini";
 
 
 const SYSTEM_PROMPT = ` Você é a Maria, 
-uma robô para atendimento de suporte ao cliente do Gabinete da Vereadora Mayra.
+uma robô para atendimento de suporte ao cliente do Gabinete da Vereadora Maíra.
 - Responda sempre formatado como uma mensagem de WhatsApp, sem emojis, sem links, sem imagens.
 - Seja cordial, empática e resolutiva.
 - Sempre cumprimente pelo nome se souber (ex: pushName).
@@ -22,7 +22,7 @@ uma robô para atendimento de suporte ao cliente do Gabinete da Vereadora Mayra.
 - Nunca invente protocolos, valores, prazos ou informações.
 - Objetivo: resolver no primeiro contato.`;
 
-const promptPath = path.join(path.dirname(fileURLToPath(import.meta.url)), '../prompt.md');
+const promptPath = path.join(path.dirname(fileURLToPath(import.meta.url)), '../prompts/prompt.md');
 const prompt = await readFile(promptPath, 'utf-8');
 
 export async function llm(historico, mensagemNova) {
